@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCarlMW2tLLgTG6iiE5GaQfoePqaJqI2PE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>747444349018</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>steth.ICleanMedX-app</string>
+	<key>PROJECT_ID</key>
+	<string>stethoscope-tracker</string>
+	<key>STORAGE_BUCKET</key>
+	<string>stethoscope-tracker.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:747444349018:ios:86bdf75a2cdda044fcd063</string>
+</dict>
+</plist>

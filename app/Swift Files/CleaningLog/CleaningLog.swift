@@ -9,19 +9,6 @@ import SwiftUI
 
 // will later create a swift file that retrieves from firebase
 
-
-func createDataSet() -> [String: Int] {
-    var data: [String: Int] = [:]
-    for i in 1 ... 31 {
-        // transform i into a string
-        // make sure to pad out the left side
-        // if there is extra space.
-        let date = String(format: "2026-03-%02d" , i)
-        data[date] = i - 1
-    }
-    return data
-}
-
 struct CleaningLog: View {
     @StateObject private var dataManager = DeviceDataManager()
     @State private var selectedDate = Date()
@@ -46,7 +33,6 @@ struct CleaningLog: View {
 
                 LazyVGrid(columns: columns, spacing: 8) {
                     
-                    let data = createDataSet()
                     let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
                     let paddingDays = calendarLogic.getFirstWeekday() - 1
                     let totalDays = paddingDays + calendarLogic.daysInMonth()
@@ -59,14 +45,24 @@ struct CleaningLog: View {
                             .frame(height: 30)
                     }
                     
-                    // numOfDay rows
+
+                    // retrieve current month & year
+                    let month = Calendar.current.component(.month, from: Date())
+                    let year = Calendar.current.component(.year, from: Date())
+                    
                     ForEach(0..<totalDays, id: \.self) { index in
                         if index < paddingDays {
                             Color.clear.frame(width: 40, height: 40)
                         } else {
                             let day = index - paddingDays + 1
-                            let dateString = String(format: "2026-03-%02d", day)
-                            DayCell(day: day, usageCount: data[dateString] ?? 0)
+                            let dateString = String(format: "%04d-%02d-%02d", year, month, day)
+                            
+                            DayCell( // constructing DayCell will the appropriate vals.
+                                day: day,
+                                color: dataManager.dayColors[dateString] ?? .gray,
+                                usageCount: dataManager.usageByDate[dateString] ?? 0,
+                                patientsMet: dataManager.patientsMet[dateString] ?? 0
+                            )
                         }
                     }
                 }
@@ -78,6 +74,7 @@ struct CleaningLog: View {
         }
         .padding(.top)
         .onAppear {
+            dataManager.seedTestData()
             dataManager.fetchData()
         }
     }

@@ -16,10 +16,41 @@ class DeviceDataManager: ObservableObject {
     
     private let db = Firestore.firestore()
     
+    func seedTestData() {
+        var usageByDate: [String: Int] = [:]
+        var patientsMet: [String: Int] = [:]
+        
+        // Week 1: green (usage >= patients)
+        for day in 1...7 {
+            let date = String(format: "2026-04-%02d", day)
+            usageByDate[date] = 20
+            patientsMet[date] = 10
+        }
+        
+        // Week 2: gray (no patients)
+        for day in 8...14 {
+            let date = String(format: "2026-04-%02d", day)
+            usageByDate[date] = 0
+            patientsMet[date] = 0
+        }
+        
+        // Week 3: red (usage < patients)
+        for day in 15...21 {
+            let date = String(format: "2026-04-%02d", day)
+            usageByDate[date] = 10
+            patientsMet[date] = 20
+        }
+        
+        db.collection("stethoscopes").document("STETH-001").setData([
+            "Usage by Date": usageByDate,
+            "Patients Met": patientsMet
+        ])
+    }
+    
     func fetchData() {
         db.collection("stethoscopes").document("STETH-001").getDocument { snapshot, error in
             
-            guard let data = snapshot?.data() // guard ensures data is not nil (equivalent to NULL) 
+            guard let data = snapshot?.data() // guard ensures data is not nil (equivalent to NULL)
             else {
                 print("there is an error accessing the database.")
                 return

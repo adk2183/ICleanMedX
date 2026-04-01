@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct DashboardView: View {
     @State private var sessionActive = false
@@ -67,33 +68,29 @@ struct DashboardView: View {
                 .padding(.horizontal)
                 
                 // Cleaning Log Card
-                Button(action: {
-                    // navigate to cleaning log
-                }) {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Cleaning Log")
-                                .font(.headline)
-                                .bold()
-                            Text("View Your Sanitation History")
-                                .font(.caption)
+                NavigationLink(destination: CleaningLog()) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("Cleaning Log")
+                                    .font(.headline)
+                                    .bold()
+                                Text("View Your Sanitation History")
+                                    .font(.caption)
+                            }
+                            Spacer()
+                            Image(systemName: "calendar")
+                                .font(.largeTitle)
                         }
-                        Spacer()
-                        Image(systemName: "calendar")
-                            .font(.largeTitle)
-                    }
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
-                    .background(Color.purple.opacity(0.6))
-                    .cornerRadius(16)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
+                        .background(Color.purple.opacity(0.6))
+                        .cornerRadius(16)
                 }
                 .padding(.horizontal)
                 
                 // Register New Device Card
-                Button(action: {
-                    // navigate to register device
-                }) {
+                NavigationLink(destination: ScannerView()) {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Register New Device")
                             .font(.headline)
@@ -117,3 +114,6 @@ struct DashboardView: View {
     }
 }
 
+#Preview  {
+    DashboardView()
+}

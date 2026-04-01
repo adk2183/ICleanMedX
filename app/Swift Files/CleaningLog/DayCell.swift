@@ -8,7 +8,9 @@
 import SwiftUI
 struct DayCell: View {
     var day: Int
+    var color: Color
     var usageCount: Int
+    var patientsMet: Int
     
     var intensity: Double {
         min(Double(usageCount) / 15.0, 1.0)

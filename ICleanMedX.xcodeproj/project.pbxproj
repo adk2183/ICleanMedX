@@ -18,14 +18,14 @@
 			containerPortal = E7D27CB22F47F2B3003BBC7E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E7D27CB92F47F2B3003BBC7E;
-			remoteInfo = "ICleanMedX app";
+			remoteInfo = app;
 		};
 		E7D27CD32F47F2B5003BBC7E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E7D27CB22F47F2B3003BBC7E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E7D27CB92F47F2B3003BBC7E;
-			remoteInfo = "ICleanMedX app";
+			remoteInfo = app;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -39,16 +39,6 @@
 		E7D27CBC2F47F2B3003BBC7E /* app */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = app;
-			sourceTree = "<group>";
-		};
-		E7D27CCB2F47F2B5003BBC7E /* ICleanMedX appTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "ICleanMedX appTests";
-			sourceTree = "<group>";
-		};
-		E7D27CD52F47F2B5003BBC7E /* ICleanMedX appUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "ICleanMedX appUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -85,8 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				E7D27CBC2F47F2B3003BBC7E /* app */,
-				E7D27CCB2F47F2B5003BBC7E /* ICleanMedX appTests */,
-				E7D27CD52F47F2B5003BBC7E /* ICleanMedX appUITests */,
 				E7D27CBB2F47F2B3003BBC7E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,7 +113,7 @@
 				E7D27CEA2F484B8C003BBC7E /* FirebaseFirestore */,
 				E7D27CEC2F484B8C003BBC7E /* FirebaseStorage */,
 			);
-			productName = "ICleanMedX app";
+			productName = app;
 			productReference = E7D27CBA2F47F2B3003BBC7E /* ICleanMedX.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -142,13 +130,10 @@
 			dependencies = (
 				E7D27CCA2F47F2B5003BBC7E /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				E7D27CCB2F47F2B5003BBC7E /* ICleanMedX appTests */,
-			);
 			name = ICleanMedXTests;
 			packageProductDependencies = (
 			);
-			productName = "ICleanMedX appTests";
+			productName = appTests;
 			productReference = E7D27CC82F47F2B5003BBC7E /* ICleanMedXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -165,13 +150,10 @@
 			dependencies = (
 				E7D27CD42F47F2B5003BBC7E /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				E7D27CD52F47F2B5003BBC7E /* ICleanMedX appUITests */,
-			);
 			name = ICleanMedXUITests;
 			packageProductDependencies = (
 			);
-			productName = "ICleanMedX appUITests";
+			productName = appUITests;
 			productReference = E7D27CD22F47F2B5003BBC7E /* ICleanMedXUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -403,13 +385,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ICleanMedX app/ICleanMedX_app.entitlements";
+				CODE_SIGN_ENTITLEMENTS = app/ICleanMedX_app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85KA7S8QKJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow app to access camera";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=*]" = "";
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
@@ -440,14 +425,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ICleanMedX app/ICleanMedX_app.entitlements";
+				CODE_SIGN_ENTITLEMENTS = app/ICleanMedX_app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85KA7S8QKJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow app to access camera";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=*]" = "";
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
@@ -532,7 +519,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = "ICleanMedX app";
+				TEST_TARGET_NAME = app;
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
@@ -553,7 +540,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = "ICleanMedX app";
+				TEST_TARGET_NAME = app;
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
